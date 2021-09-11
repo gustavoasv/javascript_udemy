@@ -1,0 +1,15 @@
+.ex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    color: rgb(0, 0, 0);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ex input{
+    outline: 0;
+    margin-bottom: 10px;
+}
