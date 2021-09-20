@@ -16,3 +16,20 @@ console.log(resto);
 
 // pegar o resro == ...rest
 // espalhar == spread
+
+// OBJETOS
+
+const pessoa = {
+  nome: "Gustavo",
+  sobrenome: "Alves",
+  idade: 20,
+  endereco: {
+    rua: "Y",
+    numero: 320,
+  },
+};
+
+// atribuicao via desustruturacao
+const { nome, pessoasobrenome, pessoaidade } = pessoa;
+console.log(pessoa)
+console.log(nome);
