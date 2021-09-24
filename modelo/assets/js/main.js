@@ -1,106 +1,41 @@
-// const h1 = document.querySelector(".container h1");
-
-// const data = new Date();
-
-// function getDiaSemanaTexto(diaSemana) {
-//   let diaSemanaTexto;
-
-//   switch (diaSemana) {
-//     case 0:
-//       diaSemanaTexto = "domingo";
-//       return diaSemanaTexto;
-//     case 1:
-//       diaSemanaTexto = "segunda";
-//       return diaSemanaTexto;
-//     case 2:
-//       diaSemanaTexto = "terça";
-//       return diaSemanaTexto;
-//     case 3:
-//       diaSemanaTexto = "quarta";
-//       return diaSemanaTexto;
-//     case 4:
-//       diaSemanaTexto = "quinta";
-//       return diaSemanaTexto;
-//     case 5:
-//       diaSemanaTexto = "sexta";
-//       return diaSemanaTexto;
-//     case 6:
-//       diaSemanaTexto = "sabado";
-//       return diaSemanaTexto;
-//     default:
-//       diaSemanaTexto = " ";
-//       return diaSemanaTexto;
-//   }
-// }
-
-// function getNomeMes(numeroMes) {
-//   let nomeMes;
-
-//   switch (numeroMes) {
-//     case 0:
-//       nomeMes = "janeiro";
-//       return nomeMes;
-//     case 1:
-//       nomeMes = "fervereiro";
-//       return nomeMes;
-//     case 2:
-//       nomeMes = "março";
-//       return nomeMes;
-//     case 3:
-//       nomeMes = "abril";
-//       return nomeMes;
-//     case 4:
-//       nomeMes = "junho";
-//       return nomeMes;
-//     case 5:
-//       nomeMes = "junho";
-//       return nomeMes;
-//     case 6:
-//       nomeMes = "julho";
-//       return nomeMes;
-//     case 7:
-//       nomeMes = "agosto";
-//       return nomeMes;
-//     case 8:
-//       nomeMes = "setembro";
-//       return nomeMes;
-//     case 9:
-//       nomeMes = "outubro";
-//       return nomeMes;
-//     case 10:
-//       nomeMes = "novembro";
-//       return nomeMes;
-//     case 11:
-//       nomeMes = "dezembro";
-//       return nomeMes;
-//   }
-// }
-// function zeroAEsquerda(num) {
-//   return num >= 10 ? num : `0${num}`;
-// }
-// function criaData(data) {
-//   const diaSemana = data.getDay();
-//   const numeroMes = data.getMonth();
-
-//   const nomeDia = getDiaSemanaTexto(diaSemana);
-//   const nomeMes = getNomeMes(numeroMes);
-
-//   return (
-//     `${nomeDia}, ${data.getDate()} de ${nomeMes} ` +
-//     `de ${data.getFullYear()} ` +
-//     `${zeroAEsquerda(data.getHours())} : ${zeroAEsquerda(data.getMinutes())}`
-//   );
-// }
-
-// h1.innerHTML = criaData(data);
-
-
-const h1 = document.querySelector(".container h1");
-
-const data = new Date();
-const op =   {
-    dateStyle: "medium",
-    timeStyle: "short"
+function getTimeFromSeconds(segundos) {
+  const data = new Date(segundos * 1000);
+  return data.toLocaleTimeString("pt-BR", {
+    hour12: false,
+    timeZone: "GMT",
+  });
 }
 
-h1.innerHTML = data.toLocaleDateString('pt-BR' )
+const relogio = document.querySelector(".relogio");
+const iniciar = document.querySelector(".iniciar");
+const pausar = document.querySelector(".pausar");
+const zerar = document.querySelector(".zerar");
+let segundos = 0;
+let timer;
+
+function iniciaRelogio() {
+  timer = setInterval(function () {
+    segundos++;
+    relogio.innerHTML = getTimeFromSeconds(segundos);
+  }, 1000);
+}
+
+document.addEventListener("click", function (e) {
+  const el = e.target;
+  if (el.classList.contains("zerar")) {
+    clearInterval(timer);
+    relogio.innerHTML = "00:00:00";
+    relogio.style.color = "black";
+    segundos = 0;
+  }
+  if(el.classList.contains('iniciar')){
+    clearInterval(timer);
+    relogio.style.color = "black";
+    iniciaRelogio();
+  }
+
+  if(el.classList.contains('pausar')){
+    clearInterval(timer);
+    relogio.style.color = "red";
+  }
+});
