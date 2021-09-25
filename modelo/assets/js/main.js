@@ -17,7 +17,7 @@ function iniciaRelogio() {
   timer = setInterval(function () {
     segundos++;
     relogio.innerHTML = getTimeFromSeconds(segundos);
-  }, 1000);
+  }, 01);
 }
 
 document.addEventListener("click", function (e) {
