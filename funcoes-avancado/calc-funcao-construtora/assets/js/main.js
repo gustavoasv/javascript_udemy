@@ -64,5 +64,5 @@ function Calculadora() {
 }
 
 const ver = new Calculadora();
-
+console.log(ver)
 ver.inicia();
