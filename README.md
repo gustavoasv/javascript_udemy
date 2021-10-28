@@ -1,3 +1,3 @@
-# JavaScript-Udemy
+# JavaScript Anotações
 
 curso de JavaScript professor Otávio 
