@@ -1,3 +1,3 @@
 # JavaScript Anotações
 
-curso de JavaScript professor Otávio 
+curso de JavaScript professor Otávio.
