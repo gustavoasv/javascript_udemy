@@ -1,3 +1,3 @@
-# JavaScript Anotações
+# JavaScript para revisão
 
 curso de JavaScript professor Otávio.
