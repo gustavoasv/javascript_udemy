@@ -1,3 +1,3 @@
 # Repo JavaScript para revisão
 
-curso de JavaScript professor Otávio.
+repositório do curso de JavaScript professor Otávio.
