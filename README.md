@@ -1,1 +1,1 @@
-# Repo curso de JavaScript professor Otávio.
+# anotações do curso de JavaScript professor Otávio.
