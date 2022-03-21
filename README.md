@@ -1,1 +1,1 @@
-# mnhas anotações do curso de JavaScript professor Otávio.
+# minhas anotações do curso de JavaScript professor Otávio.
